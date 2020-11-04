@@ -1,0 +1,28 @@
+int pirPin1 = 8;
+int pirPin2 = 9;
+void setup() {
+  // put your setup code here, to run once:
+pinMode(pirPin1,INPUT);
+pinMode(pirPin2,InPUT);
+Serial.begin(9600);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  int pirState1=digitalRead(pirPin1);
+  int pirState2=digitalRead(pirPin2);
+  if(pirState1 == HIGH)
+  {
+    if(pirState2 == HIGH)
+    {
+      Serial.println("Person Entered the room");
+    }
+  }
+  else if(pirState2 == HIGH)
+  {
+    if(pirState1 == HIGH)
+    {
+      Serial.println("Person leaving the room"); 
+    }
+  }
+}
