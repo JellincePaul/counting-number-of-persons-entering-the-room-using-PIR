@@ -1,5 +1,6 @@
 int pirPin1 = 8;
 int pirPin2 = 9;
+int count=0;
 void setup() {
   // put your setup code here, to run once:
 pinMode(pirPin1,INPUT);
@@ -12,17 +13,20 @@ void loop() {
   int pirState1=digitalRead(pirPin1);
   int pirState2=digitalRead(pirPin2);
   if(pirState1 == HIGH)
-  {
+  {delay(1000);
     if(pirState2 == HIGH)
     {
       Serial.println("Person Entered the room");
+      count++;
     }
   }
   else if(pirState2 == HIGH)
-  {
+  {delay(1000);
     if(pirState1 == HIGH)
     {
       Serial.println("Person leaving the room"); 
+      count--;
     }
   }
+  Serial.println("Number of persons in the room = " +count);
 }
