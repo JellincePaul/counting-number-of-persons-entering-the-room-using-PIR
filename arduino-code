@@ -1,6 +1,6 @@
 int pirPin1 = 8;
 int pirPin2 = 9;
-int count=0;
+int count = 0;
 void setup() {
   // put your setup code here, to run once:
 pinMode(pirPin1,INPUT);
